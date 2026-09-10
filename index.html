@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Great Dancer — Grand Cinema</title>
+  <meta name="description" content="A cinematic dance premiere experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+  <!-- 01: LOBBY -->
+  <section id="lobby" class="scene active">
+    <div class="lobby-lights"></div>
+    <header class="topbar">
+      <div class="brand-mark"><span>G</span><i></i><span>D</span></div>
+      <div class="topbar-copy">
+        <small>EST. 2026</small>
+        <strong>THE GREAT DANCER</strong>
+      </div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle ambience">SOUND <b>ON</b></button>
+    </header>
+
+    <main class="lobby-center">
+      <div class="eyebrow">A GRAND DANCE PREMIERE</div>
+      <h1>THE GREAT<br><em>DANCER</em></h1>
+      <div class="ornament"><span></span><b>✦</b><span></span></div>
+      <p>Where every movement deserves a standing ovation.</p>
+      <button class="gold-btn" id="enterCinema">BOOK YOUR TICKET <span>→</span></button>
+    </main>
+
+    <div class="lobby-footer">
+      <span>GRAND CINEMA · SCREEN 01</span>
+      <span>TONIGHT · ONE PERFORMANCE</span>
+    </div>
+  </section>
+
+  <!-- 02: BOX OFFICE -->
+  <section id="boxOffice" class="scene">
+    <div class="curtain-side left"></div><div class="curtain-side right"></div>
+    <div class="ticket-counter">
+      <div class="counter-title">
+        <span>BOX OFFICE</span>
+        <h2>Tonight's Performance</h2>
+      </div>
+      <div class="movie-card">
+        <div class="poster">
+          <div class="poster-glow"></div>
+          <span class="poster-small">THE GREAT DANCER</span>
+          <strong>DANCE<br>LIVE</strong>
+          <i>SCREEN 01</i>
+        </div>
+        <div class="movie-info">
+          <div class="live-pill"><span></span> ONE NIGHT PREMIERE</div>
+          <h3>The Great Dancer</h3>
+          <p class="muted">A cinematic presentation of movement, rhythm and expression.</p>
+          <div class="details">
+            <div><small>SCREEN</small><b>01</b></div>
+            <div><small>FORMAT</small><b>4K</b></div>
+            <div><small>SHOW</small><b>20:30</b></div>
+            <div><small>PRICE</small><b>FREE</b></div>
+          </div>
+          <div class="seat-heading"><span>Select your seat</span><small>YOU ARE THE GUEST OF HONOUR</small></div>
+          <div class="seats" id="seats"></div>
+          <button class="gold-btn wide" id="buyTicket" disabled>RESERVE SEAT <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03: TICKET -->
+  <section id="ticketScene" class="scene">
+    <div class="ticket-wrap">
+      <div class="ticket">
+        <div class="ticket-left">
+          <small>THE GREAT DANCER</small>
+          <h2>ADMIT<br>ONE</h2>
+          <div class="ticket-line"></div>
+          <p>GRAND CINEMA · SCREEN 01</p>
+        </div>
+        <div class="ticket-stub">
+          <span>SEAT</span><strong id="ticketSeat">—</strong>
+          <span>SHOW</span><strong>20:30</strong>
+          <div class="barcode"></div>
+        </div>
+      </div>
+      <button class="gold-btn" id="enterHall">ENTER THE HALL <span>→</span></button>
+      <p class="hint">Keep your ticket. The doors are waiting.</p>
+    </div>
+  </section>
+
+  <!-- 04: CORRIDOR -->
+  <section id="corridor" class="scene">
+    <div class="corridor">
+      <div class="corridor-light l1"></div><div class="corridor-light l2"></div>
+      <div class="wall-sign">GRAND CINEMA <span>SCREEN 01</span></div>
+      <div class="carpet"></div>
+      <div class="hall-door">
+        <div class="door-panel left-door"></div>
+        <div class="door-panel right-door"></div>
+        <div class="door-sign">SCREEN 01<br><small>PLEASE ENTER</small></div>
+      </div>
+      <div class="corridor-message">
+        <small>YOUR SEAT AWAITS</small>
+        <h2>THE SHOW<br><em>BEGINS NOW</em></h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05: THEATRE -->
+  <section id="theatre" class="scene">
+    <div class="theatre">
+      <div class="ceiling-glow"></div>
+      <div class="screen-frame">
+        <div class="screen-curtain left-curtain"></div>
+        <div class="screen-curtain right-curtain"></div>
+        <div class="projection-screen">
+          <div class="screen-top">THE GREAT DANCER</div>
+          <div class="player-shell">
+            <!-- Google Drive preview fallback -->
+            <video
+    id="danceVideo"
+    preload="none"
+    playsinline
+    loop
+    controls>
+    <source src="./Dance_Video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+            <div class="player-fallback">
+              <p>Projection loading…</p>
+              <button id="openDrive">OPEN PERFORMANCE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="audience audience-back">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="audience audience-front">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="theatre-ui">
+        <div><span class="status-dot"></span> SCREEN 01 · LIVE</div>
+        <button id="theatreFull">FULL SCREEN ⛶</button>
+      </div>
+      <div class="cheers" id="cheers">
+        <span>👏</span><span>✨</span><span>👏</span><span>🔥</span><span>👏</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
